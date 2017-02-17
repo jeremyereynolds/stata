@@ -1,0 +1,10 @@
+v 3
+d Materials by Jeremy Reynolds
+
+d Here are some useful programs I have written. 
+d Click on the blue links to learn more about the programs.
+
+p iqv A program to calculate the index of qualitative variation
+p zcalc2 A program to calculate Z scores and areas they define
+p ztoraw  A program to calculate raw scores from Z scores
+p sumlw A program that runs the sum command with listwise deletion

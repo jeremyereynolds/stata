@@ -1,0 +1,35 @@
+
+.-
+help for ^zcalc2^
+.-
+
+Compute up to two Z-scores as well as the area above and below each Z, 
+the area between each Z and the mean, and the area between the two Z scores.
+The user must provide a mean, a standard deviation, and one or two raw scores (x1 x2).
+-----------------
+
+ ^zcalc2^ mean sd x1 x2
+ 
+
+Description
+-----------
+
+^zcalc2^ is an extension of Phillip B. Ender's program called ^zcalc^.
+        
+
+Examples
+--------
+
+ . ^zcalc2 70.07 10.27 65^
+ . ^zcalc2 70.07 10.27 65 70^
+
+
+
+Author
+------
+	Jeremy Reynolds
+	Associate Professor
+	Department of Sociology
+	University of Georgia
+	jeremy@uga.edu
+

@@ -1,0 +1,33 @@
+
+.-
+help for ^ztoraw^
+.-
+
+Compute raw score given a mean, a standard deviation, and a Z-score
+-----------------
+
+ ^ztoraw^ mean sd z
+ 
+
+Description
+-----------
+
+^ztoraw^ is based on Phillip B. Ender's program called ^zcalc^.
+Phillip's program does exactly the opposite of ^ztoraw^ by turning raw scores into z-scores.
+        
+
+Examples
+--------
+
+ . ^ztoraw 70.07 10.27 .19^
+
+
+
+Author
+------
+	Jeremy Reynolds
+	Associate Professor
+	Department of Sociology
+	University of Georgia
+	jeremy@uga.edu
+

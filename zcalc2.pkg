@@ -1,0 +1,9 @@
+v 3
+d zcalc2.  Package to calculate Z scores and areas they define.
+d by Jeremy Reynolds.
+
+* I can also insert comments; these will not be displayed.
+* f lines name the files that comprise your package:
+
+f zcalc2.ado
+f zcalc2.hlp

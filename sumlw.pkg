@@ -1,0 +1,9 @@
+v 3
+d sumlw.  Package to calculate summary statistics with listwise deletion
+d by Jeremy Reynolds.
+
+* I can also insert comments; these will not be displayed.
+* f lines name the files that comprise your package:
+
+f sumlw.ado
+f sumlw.hlp

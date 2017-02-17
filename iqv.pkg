@@ -1,0 +1,9 @@
+v 3
+d iqv.  Package to calculate the index of qualitative variation.
+d by Jeremy Reynolds.
+
+* I can also insert comments; these will not be displayed.
+* f lines name the files that comprise your package:
+
+f iqv.ado
+f iqv.hlp

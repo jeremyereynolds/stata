@@ -1,0 +1,9 @@
+v 3
+d ztoraw.  Package to calculate raw scores from Z scores.
+d by Jeremy Reynolds.
+
+* I can also insert comments; these will not be displayed.
+* f lines name the files that comprise your package:
+
+f ztoraw.ado
+f ztoraw.hlp

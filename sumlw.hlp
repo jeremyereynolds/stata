@@ -1,0 +1,39 @@
+{smcl}
+{* September 2, 2008}{...}
+{hline}
+help for {hi:sumlw}
+{hline}
+
+{title:Summary Statistics with Listwise Deletion} 
+
+{p 8 17 2} 
+{cmd:sumlw} 
+{it: varlist} 
+[{cmd:if} {it:exp}] 
+[{cmd:in} {it:range}]
+
+{title:Description}
+
+{p 4 4 2}
+{cmd:sumlw} calculates summary statistics using listwise deletion.
+
+{p 4 4 2}{cmd:fweight}s, {cmd:aweight}s and {cmd:iweight}s may not be specified. 
+
+
+{title:Remarks} 
+
+{p 4 4 2}This command can be used with the by: prefix.
+
+
+{title:Examples}
+
+{p 4 8 2}{inp:. sysuse auto}
+
+{p 4 8 2}{inp:. sumlw foreign}{p_end}
+{p 4 8 2}{inp:. sumlw foreign rep78}{p_end}
+
+{title:Author}
+
+{p 4 4 2}Jeremy Reynolds, University of Georgia{break} 
+         jeremyr@uga.edu
+

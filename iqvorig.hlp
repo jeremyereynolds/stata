@@ -1,0 +1,41 @@
+{smcl}
+{* September 2, 2008}{...}
+{hline}
+help for {hi:iqv}
+{hline}
+
+{title:Index of Qualitative Variation} 
+
+{p 8 17 2} 
+{cmd:iqv} 
+{it: varlist} 
+[{cmd:if} {it:exp}] 
+[{cmd:in} {it:range}]
+
+{title:Description}
+
+{p 4 4 2}
+{cmd:iqv} calculates the index of qualitative variation using the formula on page 139 of
+Frankfort-Nachmias, Chava and Anna Leon-Guerrero.  2006. {it:Social Statistics for a Diverse Society}.
+4th Edition.  Thousand Oaks, CA: Pine Forge Press.
+
+{p 4 4 2}{cmd:fweight}s, {cmd:aweight}s and {cmd:iweight}s may not be specified. 
+
+
+{title:Remarks} 
+
+{p 4 4 2}This command can be used with the by: prefix.
+
+
+{title:Examples}
+
+{p 4 8 2}{inp:. sysuse auto}
+
+{p 4 8 2}{inp:. iqv foreign}{p_end}
+{p 4 8 2}{inp:. iqv foreign rep78}{p_end}
+
+{title:Author}
+
+{p 4 4 2}Jeremy Reynolds, University of Georgia{break} 
+         jeremyr@uga.edu
+
