@@ -41,8 +41,8 @@ if `type' != "-99 Seen but not answered" {
 }
 
 di "EXTRA INFO ABOUT THIS RESPONDENT"
-list surveyday xmidnd numewp numewtyp esch_nm wpasdays wpasdays2 multitask ///
-		changed1 changed2 changed1b if id==114 & surveyday>0, noobs sep(20) ab(15)
+capture list surveyday xmidnd numewp numewtyp esch_nm wpasdays wpasdays2 multitask ///
+		changed1 changed2 changed1b if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
 
 end	
 	
