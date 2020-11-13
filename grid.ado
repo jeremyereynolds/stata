@@ -61,31 +61,3 @@ di "MORE INFO ABOUT THIS RESPONDENT"
 list surveyday xmidnd esch_nm wpasdays wpasdays2 multitask changed* if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
 
 end	
-
-grid e 424 o
-grid e 424 c
-	
-grid e 114 o
-grid e 114 c
-
-
-	
-list surveyday xmidnd numewp numewtyp esch_nm wpasdays wpasdays2 multitask ///
-		changed1 changed2 changed1b if id==`idnum' & surveyday>0, noobs sep(20) ab(15)	
-	
-/*	
-save output of list command as local macro
-https://www.stata.com/statalist/archive/2008-02/msg00179.html
-levelsof var1 if var2 == x, local(levels) 
-/*
-
-/*
-add other info
-xmidnd numewp numewtyp esch_nm wpasdays wpasdays2 multitask midprob
-	changed1 changed2 changed1b
-	awseq aschd_wp*_prob  work_a dayhrs_a dayhrs_dv_a midn_1  
-
-browse id workerid_mt surveyday numewp numewtyp esch_nm xmidnd wpasdays wpasdays2 multitask midprob changed1 changed2 ///
-         esch_from dayhrs_t eschd_b_wp1 - eschd_e_wp10 es_b_wp1 - es_e_wp10 ewseq elseq etseq ///
-         eschd_loc_wp* eschd_typ_wp* if wpasdays2==1
-  
