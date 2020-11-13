@@ -8,3 +8,4 @@ p iqv A program to calculate the index of qualitative variation
 p zcalc2 A program to calculate Z scores and areas they define
 p ztoraw  A program to calculate raw scores from Z scores
 p sumlw A program that runs the sum command with listwise deletion
+p grid A program to display work schedule grids nicely (as in Qualtrics)
