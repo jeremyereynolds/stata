@@ -32,34 +32,8 @@ To use the program, the user must indicate:
 Examples
 --------
 
- . ^grid e 114^
-
-
-Monday
-Work Period |      Work Type                       Begin     End     Location
-------------+-------------------------------------------------------------------------
-    1       | Simple online tasks (Mturk etc.)   7:00 PM   8:00 PM   At home
- 
-Tuesday
-Work Period |      Work Type                       Begin     End     Location
-------------+-------------------------------------------------------------------------
-    1       | Simple online tasks (Mturk etc.)   7:00 PM   8:00 PM   At home
- 
-Wednesday
-Work Period |      Work Type                       Begin     End     Location
-------------+-------------------------------------------------------------------------
-    1       | Simple online tasks (Mturk etc.)   5:00 PM   6:00 PM   At home
-    2       | Work as a REGULAR EMPLOYEE         7:00 PM   Midnight  At a workplace (away from home)
- 
-Thursday
-Work Period |      Work Type                       Begin     End     Location
-------------+-------------------------------------------------------------------------
-    1       | Simple online tasks (Mturk etc.)   5:00 PM   6:00 PM   At home
-    2       | Work as a REGULAR EMPLOYEE         Midnight  7:00 AM   At a workplace (away from home)
-    3       | Work as a REGULAR EMPLOYEE         7:00 PM   Midnight  At a workplace (away from home)
-
-<output omitted>
-
+ . grid e 114 o // to get the original expected grid for respondent 114
+ . grid e 114 c // to get the changed expected grid for respondent 114
 
 
 Author
