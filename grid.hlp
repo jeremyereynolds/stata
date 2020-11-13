@@ -4,18 +4,12 @@ help for ^grid^
 .-
 
 This program is a specialized convenience tool.
-It displays expected, actual, or preferred work grids nicely to mimic the grids in Qualtrics.
-It only works with particular data sets from the Work Week Project.
-
-The user must indicate:
- 1) which grid type to display (e, a, or p) 
- 2) the respondent's ID number (e.g., 114)
-
 
 Description
 -----------
 
-^grid^ will only work with data files from the Work Week Project.
+^grid^ will only work with particular data files from the Work Week Project.
+
 The data files must contain the variables ^id^ and ^surveyday^.
 
 The data files must also contain schedule grid variables that:
@@ -29,6 +23,11 @@ eschd_typ_wp1 - eschd_typ_wp10
 eschd_b_wp1 - eschd_b_wp10
 eschd_e_wp1 - eschd_e_wp10
 eschd_loc_wp1 - eschd_loc_wp10
+
+
+To use the program, the user must indicate:
+ 1) which grid type to display (e, a, or p) 
+ 2) the respondent's ID number (e.g., 114)
 
 Examples
 --------
