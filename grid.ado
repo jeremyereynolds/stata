@@ -1,5 +1,3 @@
-program drop grid
-	
 program define grid
   args gt idnum
   
