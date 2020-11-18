@@ -12,7 +12,7 @@ foreach d of numlist 1/7{
 		*make header
 		if `t'==1 & `changed'==0 di as text "`day'"
 		if `t'==1 & `changed'>0 di as result "`day' (* = after cleaning)"
-		if `t'==1 di as text "Work Period {c |}" _col(20) "Work Type" _col(52) "Begin" _col(62) "End" _col(72) "Begin*" _col(82) "End*" _col(90) "Location" 
+		if `t'==1 di as text "Work Period {c |}" _col(20) "Work Type" _col(62) "Begin" _col(72) "End" _col(82) "Begin*" _col(92) "End*" _col(100) "Location" 
 		if `t'==1 di as text "{hline 12}{c +}{hline 100}"
 
 	*put info from changed times in macros
@@ -45,7 +45,7 @@ foreach d of numlist 1/7{
 		if missing(`"`type'"')==0{
 		 if `type' != "-99 Seen but not answered"{
 			di as result _col(2) "`t'" as text _col(13)"{c |}" as result _col(15) `type' ///
-			_col(50) `begin'  _col(60) `end' _col(70) `cbegin'  _col(80) `cend' _col(90) `loc'
+			_col(60) `begin'  _col(70) `end' _col(80) `cbegin'  _col(90) `cend' _col(100) `loc'
 		 }
 		}
 	}
