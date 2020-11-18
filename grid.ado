@@ -42,10 +42,12 @@ foreach d of numlist 1/7{
 	quietly: drop st_`gt'schd_loc_wp`t'
 		
 	*display schedule
-		if `type' != "-99 Seen but not answered" {
+		if missing(`"`type'"')==0{
+		 if `type' != "-99 Seen but not answered"{
 			di as result _col(2) "`t'" as text _col(13)"{c |}" as result _col(15) `type' ///
 			_col(50) `begin'  _col(60) `end' _col(70) `cbegin'  _col(80) `cend' _col(90) `loc'
-		}		
+		 }
+		}
 	}
 		di " "
 }
@@ -54,3 +56,4 @@ di "MORE INFO ABOUT THIS RESPONDENT"
 list surveyday cleaning xmidnd esch_nm wpasdays wpasdays2 multitask changed* if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
 
 end	
+
