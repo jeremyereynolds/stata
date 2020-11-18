@@ -53,7 +53,7 @@ foreach d of numlist 1/7{
 }
 
 di "MORE INFO ABOUT THIS RESPONDENT"
-list surveyday cleaning xmidnd esch_nm wpasdays wpasdays2 multitask changed* if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
+list surveyday esch_from cleaning xmidnd esch_nm wpasdays wpasdays2 multitask changed* if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
 
 end	
 
