@@ -44,7 +44,7 @@ foreach d of numlist 1/7{
 	*display schedule
 		if missing(`"`type'"')==0{
 		 if `type' != "-99 Seen but not answered"{
-			di as result _col(2) "`t'" as text _col(13)"{c |}" as result _col(15) substr(`type',1,43) ///
+			di as result _col(2) "`t'" as text _col(13)"{c |}" as result _col(15) `type'  /// substr(`type',1,43)
 			_col(60) `begin'  _col(70) `end' _col(80) `cbegin'  _col(90) `cend' _col(100) `loc'
 		 }
 		}
