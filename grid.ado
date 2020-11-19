@@ -40,11 +40,15 @@ foreach d of numlist 1/7{
 	quietly: decode  `gt'schd_loc_wp`t', gen(st_`gt'schd_loc_wp`t')
 	quietly: levelsof st_`gt'schd_loc_wp`t' if surveyday==`d' & id==`idnum', local(loc)
 	quietly: drop st_`gt'schd_loc_wp`t'
-		
+	
+	*truncate work type because it can be too long (need to leave off = sign; not sure why)
+	local type substr(`type',1 ,43)
+	
+	
 	*display schedule
 		if missing(`"`type'"')==0{
 		 if `type' != "-99 Seen but not answered"{
-			di as result _col(2) "`t'" as text _col(13)"{c |}" as result _col(15) `type'  /// substr(`type',1,43)
+			di as result _col(2) "`t'" as text _col(13) "{c |}" as result _col(15) `type' ///
 			_col(60) `begin'  _col(70) `end' _col(80) `cbegin'  _col(90) `cend' _col(100) `loc'
 		 }
 		}
@@ -56,4 +60,3 @@ di "MORE INFO ABOUT THIS RESPONDENT"
 list surveyday esch_from cleaning xmidnd esch_nm wpasdays wpasdays2 multitask changed* if id==`idnum' & surveyday>0, noobs sep(20) ab(15)
 
 end	
-
