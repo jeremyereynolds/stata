@@ -26,7 +26,7 @@ foreach d of numlist 1/7{
 	
 	*put info from original grid items in macros
 	quietly: decode  `gt'schd_typ_wp`t', gen(st_`gt'schd_typ_wp`t')
-	quietly: levelsof st_`gt'schd_typ_wp`t' if surveyday==`d' & id==`idnum', local(type)
+	quietly: levelsof st_`gt'schd_typ_wp`t' if surveyday==`d' & id==`idnum', local(type) clean
 	quietly: drop st_`gt'schd_typ_wp`t'
 	
 	quietly: decode  `gt's_b_wp`t', gen(st_`gt's_b_wp`t')
@@ -41,14 +41,13 @@ foreach d of numlist 1/7{
 	quietly: levelsof st_`gt'schd_loc_wp`t' if surveyday==`d' & id==`idnum', local(loc)
 	quietly: drop st_`gt'schd_loc_wp`t'
 	
-	*truncate work type because it can be too long (need to leave off = sign; not sure why)
-	local type substr(`type',1 ,43)
-	
-	
+	*truncate work type because it can be too long
+	local type = substr("`type'",1 ,43)
+
 	*display schedule
-		if missing(`"`type'"')==0{
-		 if `type' != "-99 Seen but not answered"{
-			di as result _col(2) "`t'" as text _col(13) "{c |}" as result _col(15) `type' ///
+	if missing("`type'")==0{
+		 if "`type'" != "-99 Seen but not answered"{
+			di as result _col(2) "`t'" as text _col(13) "{c |}" as result _col(15) "`type'" ///
 			_col(60) `begin'  _col(70) `end' _col(80) `cbegin'  _col(90) `cend' _col(100) `loc'
 		 }
 		}
