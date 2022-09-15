@@ -23,8 +23,8 @@ if "`x2'" == "" {
     local abovef = string(round(`above',.01))
     local belowf = string(round(`below',.01))
     local betweenf = string(round(`between',.01))
-    twoway (function y=normden(x), range(`z' 4) bcolor(erose) recast(area)) ///
-           (function y=normden(x), range(-4 4) pstyle(p2)), ///
+    twoway (function y=normalden(x), range(`z' 4) bcolor(erose) recast(area)) ///
+           (function y=normalden(x), range(-4 4) pstyle(p2)), ///
            yscale(off) xscale(line) legend(off) xlabel(-4(1)4) ylabel( , nogrid) xtitle("Z-score") ///
            plotregion(margin(zero)) title(`title1') ///
            note("Percent of area:" "  above Z = `abovef'%" ///
@@ -74,7 +74,7 @@ if "`x2'" ~= "" {
     local between12 = string(round(abs(`below1f' - `below2f'),.01))
     display as text " Percent of area between Z1 and Z2 = " as result %8.2f `between12'
     local title1 = "z1 = " + string(round(`z1',.01)) + "      z2 = " + string(round(`z2',.01))
-          twoway (function y=normden(x), range(-4 4) pstyle(p2)), ///
+          twoway (function y=normalden(x), range(-4 4) pstyle(p2)), ///
 		yscale(off) xscale(line) legend(off) xlabel(-4(1)4) ylabel( , nogrid) xtitle("Z-score") ///
 		plotregion(margin(zero)) title(`title1') ///
             xline(`z1', lcolor(red)) ///
