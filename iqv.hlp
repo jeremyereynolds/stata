@@ -1,5 +1,5 @@
 {smcl}
-{* September 2, 2008}{...}
+{* September 19, 2022}{...}
 {hline}
 help for {hi:iqv}
 {hline}
@@ -15,7 +15,7 @@ help for {hi:iqv}
 {title:Description}
 
 {p 4 4 2}
-{cmd:iqv} This package calculates the index of qualitative variation for a list of variables. The code is based on the example posted by Nick Cox on the Stata Forum {browse "http://www.statalist.org/forums/forum/general-stata-discussion/general/1345811-index-of-qualitative-variation":(see here)} {break} 
+{cmd:iqv} This package calculates the index of qualitative variation for a list of variables. The code is based on the example posted by Nick Cox on the Stata Forum {browse "http://www.statalist.org/forums/forum/general-stata-discussion/general/1345811-index-of-qualitative-variation":(see here).} {break} 
 The package divcat calculates several measures of variation for nominal variables including the IQV. In that package, the IQV is called NGV = Normalized Generalized Variance.
  
 
@@ -29,10 +29,10 @@ The package divcat calculates several measures of variation for nominal variable
 
 {title:Examples}
 
-{p 4 8 2}{inp:. sysuse auto}
+{p 4 8 2}{inp:. sysuse nlsw88}
 
-{p 4 8 2}{inp:. iqv foreign}{p_end}
-{p 4 8 2}{inp:. iqv foreign rep78}{p_end}
+{p 4 8 2}{inp:. iqv race}{p_end}
+{p 4 8 2}{inp:. iqv iqv race married collgrad}{p_end}
 
 {title:Author}
 
