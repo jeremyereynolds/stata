@@ -31,11 +31,6 @@ program define iqv, byable(recall) rclass
 			di as text "``i'' " _col(15) as result %9.3f `iqv'		/*display variable name as text and iqv as result*/
 			local i = `i' + 1						/*increase counter by 1*/
 	}
-
-di as text ""	
-di as text ""
-di as text "Note: The package divcat also calculates the IQV (i.e., NGV = Normalized Generalized Variance) and related measures."
-
 end
 
 
