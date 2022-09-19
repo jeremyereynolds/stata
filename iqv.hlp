@@ -16,11 +16,12 @@ help for {hi:iqv}
 
 {p 4 4 2}
 {cmd:iqv} This package calculates the index of qualitative variation for a list of variables. The code is based on an example posted by Nick Cox on the Stata Forum. 
+
+
 {browse  "http://www.statalist.org/forums/forum/general-stata-discussion/general/1345811-index-of-qualitative-variation" :To see the post, click here.} 
-{break} 
-{break} 
-{break} 
-The package called divcat by Dirk Enzmann also calculates the IQV. In that package, the IQV is called NGV = Normalized Generalized Variance. Enzmann's package also calculates several other measures of variation for nominal variables, but it only allows one variable at a time. 
+
+
+{p 4 4 2}The package called divcat by Dirk Enzmann also calculates the IQV. In that package, the IQV is called NGV = Normalized Generalized Variance. Enzmann's package also calculates several other measures of variation for nominal variables, but it only allows one variable at a time. 
  
 
 {p 4 4 2}{cmd:fweight}s, {cmd:aweight}s and {cmd:iweight}s may not be specified. 
