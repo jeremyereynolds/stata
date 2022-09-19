@@ -4,8 +4,6 @@
 *Based on the mata approach suggested by Nick Cox in the post below
 *http://www.statalist.org/forums/forum/general-stata-discussion/general/1345811-index-of-qualitative-variation
 
-program drop iqv
-
 program define iqv, byable(recall) rclass
 	syntax varlist [if] [in]  
 	local stop : word count `varlist'			/*create local macro called stop indicating # of vars in varlist*/
@@ -34,9 +32,6 @@ program define iqv, byable(recall) rclass
 end
 
 
-
-
-*IMPROVEMENTS ABANDONED
 *The thread below mentions other packages that get the IQV and other measures of variation for nominal or ordinal variables
 *http://www.statalist.org/forums/forum/general-stata-discussion/general/1345811-index-of-qualitative-variation
 *divcat
