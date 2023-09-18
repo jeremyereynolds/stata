@@ -1,0 +1,51 @@
+
+.-
+help for ^ptoraw2^
+.-
+
+Compute raw score(s) given a mean, a standard deviation, and one or two percentiles.
+-----------------
+
+ ^ptoraw2^ mean sd percentile_1 percentile_2
+ 
+
+Description
+-----------
+This command takes a percentile, finds the associated z-score, and then returns the raw score for a distribution with the specified mean and standard deviation.
+
+The z-score is identified with Stata's invnormal function. For instance, to find the z-score for the 90th percentile, one could type: display invnormal(.90). Stats would return 1.2815516.
+
+The command then plugs that z-score, along with the mean and the standard deviation a user supplies into the formula below to find the raw score the corresponds to that z-score and the associated percentile.
+
+Raw score formula:  Raw Score = mean + Z-score(standard deviation)
+
+The output is intentionally didactic to help users relate the calculations and the output to introductory statistics texts. The command also provides a graph to enhance comprehension.
+
+Acknowledgement:
+^ptoraw2^ draws on code from Phillip B. Ender's program called ^zcalc^.
+Phillip's program does exactly the opposite of ^ptoraw2^ by turning raw scores into z-scores.
+        
+
+Examples
+--------
+In a distribution with a mean of 70.07 and a s.d. of 10.27, what raw score marks off the 90th percentile? 
+
+ . ^ptoraw2 70.07 10.27 .90^
+
+ In a normal distribution, the Z that marks off the 90th percentile is 1.28.
+ The raw score marking off the 90th percentile in this distribution is thus:
+ Raw Score = mean + Z-score(standard deviation) = 70.07 + 1.28(10.27) = 83.22
+
+ Percent of area above Z =    10.03
+ Percent of area below Z =    89.97
+ Percent of area between Z and mean =    39.97
+
+
+Author
+------
+	Jeremy Reynolds
+	Professor
+	Department of Sociology
+	Purdue University
+	reyno113@purdue.edu
+
