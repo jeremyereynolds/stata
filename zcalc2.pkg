@@ -5,7 +5,7 @@ d by Jeremy Reynolds.
 * I can also insert comments; these will not be displayed.
 * f lines name the files that comprise your package:
 
-distribution-date: 20230918
+d Distribution-Date: 20230918
 
 f zcalc2.ado
 f zcalc2.hlp
