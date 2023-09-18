@@ -4,7 +4,8 @@ d Materials by Jeremy Reynolds
 d Here are some useful programs I have written. 
 d Click on the blue links to learn more about the programs.
 
-p zcalc2 A program to calculate Z scores and areas they define
+p zcalc2 A program to calculate Z scores and areas they define in a normal distribution
+p ptoraw2 A program to calculate raw scores associated with particular areas of a normal distribution
 p ztoraw  A program to calculate raw scores from Z scores
 p iqv A program to calculate the index of qualitative variation
 p sumlw A program that runs the sum command with listwise deletion
