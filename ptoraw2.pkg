@@ -1,0 +1,9 @@
+v 3
+d ptoraw2.  Package to calculate raw scores associated with particular areas of a normal distribution.
+d by Jeremy Reynolds.
+
+* I can also insert comments; these will not be displayed.
+* f lines name the files that comprise your package:
+
+f ptoraw2.ado
+f ptoraw2.hlp
