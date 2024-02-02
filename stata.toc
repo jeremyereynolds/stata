@@ -9,3 +9,4 @@ p ptoraw2 A program to calculate raw scores associated with particular areas of 
 p ztoraw  A program to calculate raw scores from Z scores
 p iqv A program to calculate the index of qualitative variation
 p sumlw A program that runs the sum command with listwise deletion
+p estoutflip A program that flips tables of regressions made with estout so the models are in rows and the variables in columns

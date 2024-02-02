@@ -1,0 +1,55 @@
+{smcl}
+{* February 2, 2024}{...}
+{hline}
+help for {hi:estoutflip}
+{hline}
+
+{title:estoutflip} 
+
+{p 8 17 2} 
+{cmd:estoutflip} 
+*{it: varlist} 
+*[{cmd:if} {it:exp}] 
+*[{cmd:in} {it:range}]
+
+{title:Description}
+
+{p 4 4 2}
+{cmd:estoutflip} This program takes a table of regression results made by esttab 
+or estout and flips it so each model is in a row and the variables are in the columns.
+It does not currently allow factor variable notation.
+
+It is based on code on Ben Jann's website for estout.
+
+{p 6}{browse "http://repec.org/bocode/e/estout/advanced.html#advanced907" :To see his code, click here.} 
+
+
+{title:Examples}
+
+
+{p 4 8 2}{inp:. *example for help file {p_end}
+{p 4 8 2}{inp:. sysuse nlsw88, clear {p_end}
+
+{p 4 8 2}{inp:. *make dummy variable because the program does not allow factor variables {p_end}
+{p 4 8 2}{inp:. tab race, gen(race_) {p_end}
+{p 4 8 2}{inp:. rename (race_1 race_2 race_3)(white black other) {p_end}
+
+{p 4 8 2}{inp:. *estimate some regressions {p_end}
+{p 4 8 2}{inp:. eststo clear {p_end}
+{p 4 8 2}{inp:. eststo wage: regress wage black other {p_end}
+{p 4 8 2}{inp:. eststo hours: regress hours black other {p_end}
+{p 4 8 2}{inp:. eststo ttl_exp: regress ttl_exp black other {p_end}
+{p 4 8 2}{inp:. eststo tenure: regress tenure black other {p_end}
+{p 4 8 2}{inp:. esttab, b(2) not n r2 label rename(_cons white) {p_end}
+
+{p 4 8 2}{inp:. *flip the results (put each model in a row and each variable in a column) {p_end}
+{p 4 8 2}{inp:. estoutflip {p_end}
+
+{p 4 8 2}{inp:. *make table with the flipped results {p_end}
+{p 4 8 2}{inp:. esttab, b(2) not mtitle noobs compress nonumb varwidth(15) {p_end}
+
+{title:Author}
+
+{p 4 4 2}Jeremy Reynolds, Purdue University{break} 
+         jeremyr@purdue.edu
+
