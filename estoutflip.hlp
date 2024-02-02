@@ -8,14 +8,12 @@ help for {hi:estoutflip}
 
 {p 8 17 2} 
 {cmd:estoutflip} 
-*{it: varlist} 
-*[{cmd:if} {it:exp}] 
-*[{cmd:in} {it:range}]
+
 
 {title:Description}
 
 {p 4 4 2}
-{cmd:estoutflip} This program takes a table of regression results made by esttab 
+This program takes a table of regression results made by esttab 
 or estout and flips it so each model is in a row and the variables are in the columns.
 It does not currently allow factor variable notation.
 
@@ -27,26 +25,26 @@ It is based on code on Ben Jann's website for estout.
 {title:Examples}
 
 
-{p 4 8 2}{inp:. *example for help file {p_end}
-{p 4 8 2}{inp:. sysuse nlsw88, clear {p_end}
+*example for help file 
+sysuse nlsw88, clear
 
-{p 4 8 2}{inp:. *make dummy variable because the program does not allow factor variables {p_end}
-{p 4 8 2}{inp:. tab race, gen(race_) {p_end}
-{p 4 8 2}{inp:. rename (race_1 race_2 race_3)(white black other) {p_end}
+*make dummy variable because the program does not allow factor variables
+tab race, gen(race_) 
+rename (race_1 race_2 race_3)(white black other) 
 
-{p 4 8 2}{inp:. *estimate some regressions {p_end}
-{p 4 8 2}{inp:. eststo clear {p_end}
-{p 4 8 2}{inp:. eststo wage: regress wage black other {p_end}
-{p 4 8 2}{inp:. eststo hours: regress hours black other {p_end}
-{p 4 8 2}{inp:. eststo ttl_exp: regress ttl_exp black other {p_end}
-{p 4 8 2}{inp:. eststo tenure: regress tenure black other {p_end}
-{p 4 8 2}{inp:. esttab, b(2) not n r2 label rename(_cons white) {p_end}
+*estimate some regressions 
+eststo clear 
+eststo wage: regress wage black other 
+eststo hours: regress hours black other 
+eststo ttl_exp: regress ttl_exp black other
+eststo tenure: regress tenure black other 
+esttab, b(2) not n r2 label rename(_cons white) 
 
-{p 4 8 2}{inp:. *flip the results (put each model in a row and each variable in a column) {p_end}
-{p 4 8 2}{inp:. estoutflip {p_end}
+*flip the results (put each model in a row and each variable in a column) 
+estoutflip 
 
-{p 4 8 2}{inp:. *make table with the flipped results {p_end}
-{p 4 8 2}{inp:. esttab, b(2) not mtitle noobs compress nonumb varwidth(15) {p_end}
+*make table with the flipped results 
+esttab, b(2) not mtitle noobs compress nonumb varwidth(15) 
 
 {title:Author}
 
