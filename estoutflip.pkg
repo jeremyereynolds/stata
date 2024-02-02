@@ -1,5 +1,6 @@
 v 1
-d estoutflip  Flip a table of regression results made by esttab so each model is in a row and each variable is in a column.
+d estoutflip  
+d This package flips a table of regression results made by esttab so each model is in a row and each variable is in a column.
 d by Jeremy Reynolds.
 
 * I can also insert comments; these will not be displayed.
