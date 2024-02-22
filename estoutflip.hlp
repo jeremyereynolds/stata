@@ -26,6 +26,9 @@ IMPORTANT: TO WORK PROPERLY, THE INITIAL ESTTAB CALL MUST SPECIFY: SE NOSTAR
 {title:Examples}
 
 
+**************
+* Open some data and make some dummy vars that are used in some of the examples below
+**************
 *example for help file 
 sysuse nlsw88, clear
 
@@ -33,21 +36,75 @@ sysuse nlsw88, clear
 tab race, gen(race_) 
 rename (race_1 race_2 race_3)(white black other) 
 
+**************
+* Example 1 (dummy vars made manually)
+**************
 *estimate some regressions 
 eststo clear 
 eststo wage: regress wage black other 
 eststo hours: regress hours black other 
 eststo ttl_exp: regress ttl_exp black other
-eststo tenure: regress tenure black other
+eststo tenure: regress tenure black other 
+*for easy comparison with final result (no se and stars)
+esttab, b(2) not n r2 label nobase rename(_cons white) order(white) noomitted 
 
-*IMPORTANT: TO WORK PROPERLY, THE INITIAL ESTTAB CALL MUST SPECIFY: SE NOSTAR
-esttab, b(2) se nostar n r2 label rename(_cons white) 
+*IMPORTANT: TO WORK PROPERLY, THIS ESTTAB CALL MUST SPECIFY: SE NOSTAR
+quietly: esttab, b(2) se nostar n r2 label rename(_cons white) order(white)
 
 *flip the results (put each model in a row and each variable in a column) 
 estoutflip 
 
 *make table with the flipped results 
 esttab, b(2) not mtitle noobs compress nonumb varwidth(15) 
+
+**************
+* Example 2 (add model statistics e.g., p-value from F test)
+**************
+*a little fancier to add the p-value from the overall F-test
+eststo clear 
+foreach var in wage hours ttl_exp tenure{
+	eststo `var': regress `var' black other
+	*get p-value for F (https://www.maartenbuis.nl/publications/p-value2.pdf)
+	estadd scalar f_p = Ftail(e(df_m),e(df_r),e(F))
+}
+*for easy comparison with final result (no se and stars)
+esttab, b(2) not n r2 label nobase rename(_cons white) order(white) noomitted 
+
+*IMPORTANT: TO WORK PROPERLY, THIS ESTTAB CALL MUST SPECIFY: SE NOSTAR
+quietly: esttab, b(2) se nostar label rename(_cons white) order(white) scalars(N r2 f_p)  
+
+*flip the results (put each model in a row and each variable in a column) 
+estoutflip 
+
+*make table with the flipped results 
+esttab, b(2) not mtitle noobs compress nonumb // varwidth(15) 
+
+
+**************
+* Example 3 (use factor variable notation to make the dummies)
+**************
+*https://www.statalist.org/forums/forum/general-stata-discussion/general/1741997-estout-flip-models-and-coefficients-when-using-factor-variables
+
+eststo clear 
+foreach var in wage hours ttl_exp tenure{
+	eststo `var': regress `var' i.race
+	*get p-value for F (https://www.maartenbuis.nl/publications/p-value2.pdf)
+	estadd scalar f_p = Ftail(e(df_m),e(df_r),e(F))
+}
+
+*for easy comparison with final result (no se and stars)
+esttab, b(2) not n r2 label nobase rename(_cons White) order(White) noomitted ///
+		stats(N r2 f_p, fmt(0 3 3))
+		
+*IMPORTANT: TO WORK PROPERLY, THIS ESTTAB CALL MUST SPECIFY: SE NOSTAR
+quietly: esttab, b(2) se nostar n r2 label nobase rename(_cons White) order(White) noomitted ///
+		stats(N r2 f_p, fmt(0 3 3))  
+
+*flip the results (put each model in a row and each variable in a column) 
+estoutflip
+
+*make table with the flipped results 
+esttab, b(2) not mtitle noobs compress nonumb 
 
 {title:Author}
 
