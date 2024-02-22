@@ -15,12 +15,13 @@ help for {hi:estoutflip}
 {p 4 4 2}
 This program takes a table of regression results made by esttab 
 or estout and flips it so each model is in a row and the variables are in the columns.
-It does not currently allow factor variable notation.
 
 It is based on code on Ben Jann's website for estout.
 
 {p 6}{browse "http://repec.org/bocode/e/estout/advanced.html#advanced907" :To see his code, click here.} 
 
+
+IMPORTANT: TO WORK PROPERLY, THE INITIAL ESTTAB CALL MUST SPECIFY: SE NOSTAR
 
 {title:Examples}
 
@@ -37,8 +38,10 @@ eststo clear
 eststo wage: regress wage black other 
 eststo hours: regress hours black other 
 eststo ttl_exp: regress ttl_exp black other
-eststo tenure: regress tenure black other 
-esttab, b(2) not n r2 label rename(_cons white) 
+eststo tenure: regress tenure black other
+
+*IMPORTANT: TO WORK PROPERLY, THE INITIAL ESTTAB CALL MUST SPECIFY: SE NOSTAR
+esttab, b(2) se nostar n r2 label rename(_cons white) 
 
 *flip the results (put each model in a row and each variable in a column) 
 estoutflip 
